@@ -1,0 +1,260 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Popins", sans-serif;
+
+}
+:root{
+  --black: #000000;
+  --white: #ffffff;
+  --red: #ff0000;
+  --red-1: #ff92bc;
+  --blue: #0000ff;
+  --blue-1: #89bbfe;
+  --blue-2: #92c3ff;
+  --yellow-1: #ffeb92;
+}
+.status {
+  color: var(--black);
+  font-size: 2em;
+  text-align: center;
+  line-height: 50px;
+}
+.content {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.square {
+  width: 80px;
+  height: 80px;
+  background-color: var(--white);
+  border: 1px solid #b6b6b6;
+  font-size: 1.6rem;
+}
+.x-symbol {
+  color: var(--blue);
+}
+
+.o-symbol {
+  color: var(--red);
+}
+
+
+.highlight{
+  background-color: var(--yellow-1);
+}
+
+
+.ul-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ul-wrapper li {
+  margin: 20px;
+  list-style: none;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+
+.current-item{
+  color: var(--black);
+  background-color: var(--red-1);
+  border-radius: 8px;
+  border: 2px solid var(--black);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.75em 1.75em;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  font-size: 13px;
+}
+
+/* button */
+.fancy {
+  background-color: transparent;
+  border: 2px solid var(--black);
+  border-radius: 0;
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 0.75em 1.75em;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: black;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);;
+}
+
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  background: var(--yellow-1);
+}
+
+.fancy:hover::before {
+  width: 0.9375rem;
+}
+
+.fancy:hover .text {
+  padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+
+.start-btn{
+  background-color: var(--blue-2);
+  border-radius: 8px;
+}
+
+
+
+
+/* toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 34px;
+ }
+ 
+ .switch input {
+  display: none;
+ }
+ 
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--red-1);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+ }
+ 
+ input:checked + .slider {
+  background-color: var(--blue-1);
+ }
+ 
+ input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+ }
+ 
+ input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(85px);
+ }
+ 
+ /*------ ADDED CSS ---------*/
+ .slider:after {
+  content: 'ASC \2191';
+  color: var(--black);
+  display: block;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 16x;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+
+ }
+ 
+ input:checked + .slider:after {
+  content: 'DESC \2193';
+ }
+ 
+.text-center{
+  text-align: center;
+}
