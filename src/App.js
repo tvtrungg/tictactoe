@@ -146,14 +146,16 @@ export default function Game() {
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
-      <div className="text-center">
-        <label className="switch">
-          <input type="checkbox" onClick={() => setIsAscending(!isAscending)} />
-          <span className="slider"></span>
-        </label>
-      </div>
-      <div className="game-info">
-        <ul className="ul-wrapper">{moves}</ul>
+      <div>
+        <div className="text-center">
+          <label className="switch">
+            <input type="checkbox" onClick={() => setIsAscending(!isAscending)} />
+            <span className="slider"></span>
+          </label>
+        </div>
+        <div className="game-info">
+          <ul className="ul-wrapper">{moves}</ul>
+        </div>
       </div>
     </div>
   );

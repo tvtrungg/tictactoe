@@ -51,12 +51,22 @@
   background-color: var(--yellow-1);
 }
 
+.game{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 100px;
+}
+
+
 
 .ul-wrapper {
+  width: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 .ul-wrapper li {
   margin: 20px;
