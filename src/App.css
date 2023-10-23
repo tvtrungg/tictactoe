@@ -52,16 +52,19 @@
 }
 
 .game{
-  display: flex;
-  justify-content: center;
-  align-items: start;
   margin-top: 100px;
 }
 
-
+@media screen and (min-width: 1024px) {
+  .game {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+}
 
 .ul-wrapper {
-  width: 700px;
+  width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
