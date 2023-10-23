@@ -71,6 +71,13 @@
   flex-wrap: wrap;
   margin: 0 auto;
 }
+
+@media screen and (min-width: 568px) {
+  .ul-wrapper {
+    width: 100%;
+  }
+}
+
 .ul-wrapper li {
   margin: 20px;
   list-style: none;
